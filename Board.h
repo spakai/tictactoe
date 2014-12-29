@@ -1,12 +1,12 @@
 #include <vector>
+#include "PlayerOptions.h"
 
 class Board {
 
     public:
         Board();
-        enum state {X,O,EMPTY};
-        std::vector<int>& getBoard();
+        std::vector<PlayerOptions>& getBoard();
          
     private:
-        std::vector<int> m_Board;
+        std::vector<PlayerOptions> m_Board;
 };

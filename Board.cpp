@@ -1,10 +1,9 @@
 #include "Board.h"
 
 Board::Board() {
-    state empty = EMPTY;
-    m_Board.assign(9, empty);
+    m_Board.assign(9,PlayerOptions::EMPTY);
 }
 
-std::vector<int>& Board::getBoard() {
+std::vector<PlayerOptions>& Board::getBoard() {
     return m_Board;
 }
