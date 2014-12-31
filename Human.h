@@ -1,0 +1,3 @@
+class Human : public GenericPlayer {
+    
+};
