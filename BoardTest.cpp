@@ -15,4 +15,10 @@ TEST_F(ABoard,EmptyOnInit) {
     ASSERT_THAT(std::count(board.getBoard().begin(),board.getBoard().end(),PlayerOptions::EMPTY),9);
 }
 
+TEST_F(ABoard,CheckIfMoveIsLegal) {
+    ASSERT_THAT(board.isValidMove(0), Eq(1));
+}
 
+TEST_F(ABoard,CheckIfMoveIsLegal2) {
+    ASSERT_THAT(board.isValidMove(10), Eq(0));
+}
