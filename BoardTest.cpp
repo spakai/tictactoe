@@ -2,6 +2,7 @@
 #include <algorithm>
 #include "Board.h"
 #include "PlayerOptions.h"
+#include "Human.h"
 
 using namespace testing;
 using namespace std;
@@ -9,6 +10,7 @@ using namespace std;
 class ABoard: public Test {
     public:
         Board board;
+		Human player1;
 };
 
 TEST_F(ABoard,EmptyOnInit) {

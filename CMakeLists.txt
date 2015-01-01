@@ -8,7 +8,8 @@ set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall")
 
 set(sources 
    main.cpp
-   Board.cpp)
+   Board.cpp
+   Human.cpp)
 
 set(test_sources
    BoardTest.cpp)
