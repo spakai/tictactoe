@@ -2,5 +2,4 @@
 
 int Human::calculateMove(Board copyOfBoard) {
 	return 0;
-
 }

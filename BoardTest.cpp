@@ -10,7 +10,6 @@ using namespace std;
 class ABoard: public Test {
     public:
         Board board;
-		Human player1;
 };
 
 TEST_F(ABoard,EmptyOnInit) {

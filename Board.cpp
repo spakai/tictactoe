@@ -16,4 +16,8 @@ bool Board::isValidMove(int move) const {
 
     return false;
 }
- 
+
+void Board::makeMove(GenericPlayer & player, int move)  {
+
+
+}
