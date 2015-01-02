@@ -9,6 +9,7 @@ set(CMAKE_CXX_FLAGS "${CMAXE_CXX_FLAGS} -Wall")
 set(sources 
    main.cpp
    Board.cpp
+   GenericPlayer.cpp
    Human.cpp)
 
 set(test_sources
