@@ -12,7 +12,7 @@ class Board {
         Board();
         std::vector<PlayerOptions>& getBoard();
         bool isValidMove(int move) const;
-		void makeMove(GenericPlayer & player, int move);         
+		bool makeMove(GenericPlayer & player, int move);         
     private:
         std::vector<PlayerOptions> m_Board;
 };
