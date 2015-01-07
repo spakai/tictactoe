@@ -29,5 +29,5 @@ TEST_F(ABoard,MakeALegalMove) {
 	human.setCallSign();
 	board.makeMove(human, 0);
 	board.makeMove(human,7);
-    ASSERT_THAT(std::count(board.getBoard().begin(),board.getBoard().end(),PlayerOptions::EMPTY),7);
+	ASSERT_THAT(std::count(board.getBoard().begin(),board.getBoard().end(),PlayerOptions::EMPTY),7);
 }
