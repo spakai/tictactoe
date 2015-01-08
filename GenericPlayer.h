@@ -10,6 +10,6 @@ class GenericPlayer {
         PlayerOptions callSign;
     public:
         virtual int calculateMove(Board copyOfBoard)=0;
-        void setCallSign();
+        void setCallSign(PlayerOptions callSign);
         PlayerOptions getCallSign() const;
 };

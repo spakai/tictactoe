@@ -26,8 +26,17 @@ TEST_F(ABoard,CheckAnIllegalMove) {
 }
 
 TEST_F(ABoard,MakeALegalMove) {
-	human.setCallSign();
+	human.setCallSign(PlayerOptions::X);
 	board.makeMove(human, 0);
 	board.makeMove(human,7);
 	ASSERT_THAT(std::count(board.getBoard().begin(),board.getBoard().end(),PlayerOptions::EMPTY),7);
+}
+
+TEST_F(ABoard, CheckWinner) {
+	human.setCallSign(PlayerOptions::X);
+	board.makeMove(human, 0);
+	board.makeMove(human,1);
+	board.makeMove(human,2);
+	ASSERT_THAT(board.Winner(), Eq(PlayerOptions::X));
+	
 }
