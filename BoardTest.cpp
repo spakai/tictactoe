@@ -36,6 +36,6 @@ TEST_F(ABoard, CheckWinner) {
 	board.makeMove(human, 0);
 	board.makeMove(human,1);
 	board.makeMove(human,2);
-	ASSERT_THAT(board.Winner(), Eq(PlayerOptions::X));
+	ASSERT_THAT(board.Winner(), Eq(GameResults::X_WINS));
 	
 }

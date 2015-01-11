@@ -3,6 +3,7 @@
 #include <vector>
 #include "PlayerOptions.h"
 #include "GenericPlayer.h"
+#include "GameResults.h"
 
 class GenericPlayer;
 
@@ -12,7 +13,7 @@ class Board {
         Board();
         std::vector<PlayerOptions>& getBoard();
 		bool makeMove(GenericPlayer & player, int move);        
-		PlayerOptions Winner(); 
+		GameResults Winner(); 
     private:
         std::vector<PlayerOptions> m_Board;
 		bool isValidMove(int move) const;

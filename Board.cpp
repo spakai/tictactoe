@@ -26,7 +26,7 @@ bool Board::makeMove(GenericPlayer & player, int move)  {
 	return false;
 }
 
-PlayerOptions Board::Winner() {
+GameResults Board::Winner() {
 	// Michael Dawson : Beggining C++ Through Game Programming
 	const int WINNING_ROWS[8][3] = {{0,1,2},
 									{3,4,5},
@@ -42,7 +42,9 @@ PlayerOptions Board::Winner() {
 			(m_Board[WINNING_ROWS[row][0]] == m_Board[WINNING_ROWS[row][1]]) &&
 			(m_Board[WINNING_ROWS[row][1]] == m_Board[WINNING_ROWS[row][2]]) )
 		{
-			return m_Board[WINNING_ROWS[row][0]];
+			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::X) return GameResults::X_WINS; 
+			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::O) return GameResults::O_WINS; 
+			
 		}
 			
 	}	
