@@ -1,6 +1,7 @@
 #include "Board.h"
 
 Board::Board() {
+	m_Board.reserve(9);
     m_Board.assign(9,PlayerOptions::EMPTY);
 }
 
@@ -27,7 +28,7 @@ bool Board::makeMove(GenericPlayer & player, int move)  {
 }
 
 GameResults Board::Winner() {
-	// Michael Dawson : Beggining C++ Through Game Programming
+	// Michael Dawson : Begining C++ Through Game Programming
 	const int WINNING_ROWS[8][3] = {{0,1,2},
 									{3,4,5},
 									{6,7,8},
@@ -37,15 +38,26 @@ GameResults Board::Winner() {
 									{0,4,8},
 									{2,4,6}};
 
-	for(int row = 0 ; row < 8 ; row++) {
-		if ( (m_Board[WINNING_ROWS[row][0]] != PlayerOptions::EMPTY) &&
-			(m_Board[WINNING_ROWS[row][0]] == m_Board[WINNING_ROWS[row][1]]) &&
-			(m_Board[WINNING_ROWS[row][1]] == m_Board[WINNING_ROWS[row][2]]) )
-		{
-			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::X) return GameResults::X_WINS; 
-			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::O) return GameResults::O_WINS; 
+	for(int row=0; row < 8 ; row++) {
+		if ((m_Board[WINNING_ROWS[row][0]] == m_Board[WINNING_ROWS[row][1]]) &&
+			(m_Board[WINNING_ROWS[row][1]] == m_Board[WINNING_ROWS[row][2]])) {
+
+			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::X)
+				return GameResults::X_WINS; 
+			
+			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::O)
+				return GameResults::O_WINS; 
 			
 		}
+	}
 			
-	}	
+
+	if(std::count(m_Board.begin(),m_Board.end(),PlayerOptions::EMPTY) == 0) {
+		return GameResults::TIE;
+	}
+
+
+	return GameResults::NO_ONE_IS_WINNING_YET;
+
+	
 }

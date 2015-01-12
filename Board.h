@@ -1,6 +1,8 @@
 #pragma once
 
 #include <vector>
+#include <algorithm>
+
 #include "PlayerOptions.h"
 #include "GenericPlayer.h"
 #include "GameResults.h"

@@ -10,7 +10,8 @@ using namespace std;
 class ABoard: public Test {
     public:
         Board board;
-		Human human;
+		Human human1;
+		Human human2;
 };
 
 TEST_F(ABoard,EmptyOnInit) {
@@ -18,24 +19,41 @@ TEST_F(ABoard,EmptyOnInit) {
 }
 
 TEST_F(ABoard,MakeALegalMove) {
-	human.setCallSign(PlayerOptions::X);
-	board.makeMove(human, 0);
-	board.makeMove(human,7);
+	human1.setCallSign(PlayerOptions::X);
+	board.makeMove(human1, 0);
+	board.makeMove(human1,7);
 	ASSERT_THAT(std::count(board.getBoard().begin(),board.getBoard().end(),PlayerOptions::EMPTY),7);
 }
 
 TEST_F(ABoard,MakeAnIllegalMove) {
-	human.setCallSign(PlayerOptions::X);
-	board.makeMove(human, 10);
-	board.makeMove(human,12);
+	human1.setCallSign(PlayerOptions::X);
+	board.makeMove(human1, 10);
+	board.makeMove(human1,12);
 	ASSERT_THAT(std::count(board.getBoard().begin(),board.getBoard().end(),PlayerOptions::EMPTY),9);
 }
 
-TEST_F(ABoard, CheckWinner) {
-	human.setCallSign(PlayerOptions::X);
-	board.makeMove(human, 0);
-	board.makeMove(human,1);
-	board.makeMove(human,2);
+TEST_F(ABoard, X_WINS) {
+	human1.setCallSign(PlayerOptions::X);
+	board.makeMove(human1, 0);
+	board.makeMove(human1,1);
+	board.makeMove(human1,2);
 	ASSERT_THAT(board.Winner(), Eq(GameResults::X_WINS));
 	
+}
+
+TEST_F(ABoard, TIE) {
+	human1.setCallSign(PlayerOptions::X);
+	human2.setCallSign(PlayerOptions::O);
+	board.makeMove(human2,0);
+	board.makeMove(human2,1);
+	board.makeMove(human1,2);
+	board.makeMove(human1,3);
+	board.makeMove(human1,4);
+	board.makeMove(human2,5);
+	board.makeMove(human2,6);
+	board.makeMove(human2,7);
+	board.makeMove(human1,8);
+
+	ASSERT_THAT(board.Winner(), Eq(GameResults::TIE));
+
 }
