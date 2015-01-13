@@ -38,26 +38,26 @@ GameResults Board::Winner() {
                                     {0,4,8},
                                     {2,4,6}};
 
-	for(int row=0; row < 8 ; row++) {
-		if ((m_Board[WINNING_ROWS[row][0]] == m_Board[WINNING_ROWS[row][1]]) &&
-			(m_Board[WINNING_ROWS[row][1]] == m_Board[WINNING_ROWS[row][2]])) {
+    for(int row=0; row < 8 ; row++) {
+        if ((m_Board[WINNING_ROWS[row][0]] == m_Board[WINNING_ROWS[row][1]]) &&
+            (m_Board[WINNING_ROWS[row][1]] == m_Board[WINNING_ROWS[row][2]])) {
 
-			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::X)
-				return GameResults::X_WINS; 
+            if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::X)
+                return GameResults::X_WINS; 
 			
-			if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::O)
-				return GameResults::O_WINS; 
+            if(m_Board[WINNING_ROWS[row][0]] == PlayerOptions::O)
+                return GameResults::O_WINS; 
 			
-		}
-	}
+        }
+    }
 			
 
-	if(std::count(m_Board.begin(),m_Board.end(),PlayerOptions::EMPTY) == 0) {
-		return GameResults::TIE;
-	}
+    if(std::count(m_Board.begin(),m_Board.end(),PlayerOptions::EMPTY) == 0) {
+        return GameResults::TIE;
+    }
 
 
-	return GameResults::NO_ONE_IS_WINNING_YET;
+    return GameResults::NO_ONE_IS_WINNING_YET;
 
 	
 }
