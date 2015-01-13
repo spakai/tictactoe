@@ -34,13 +34,19 @@ TEST_F(ABoard,MakeAnIllegalMove) {
 
 TEST_F(ABoard, X_WINS) {
 	human1.setCallSign(PlayerOptions::X);
-	board.makeMove(human1, 0);
+	board.makeMove(human1,0);
 	board.makeMove(human1,1);
 	board.makeMove(human1,2);
 	ASSERT_THAT(board.Winner(), Eq(GameResults::X_WINS));
-	
 }
 
+TEST_F(ABoard, 0_WINS) {
+	human1.setCallSign(PlayerOptions::O);
+	board.makeMove(human1,3);
+	board.makeMove(human1,4);
+	board.makeMove(human1,5);
+	ASSERT_THAT(board.Winner(), Eq(GameResults::O_WINS));
+}
 TEST_F(ABoard, TIE) {
 	human1.setCallSign(PlayerOptions::X);
 	human2.setCallSign(PlayerOptions::O);
@@ -55,5 +61,16 @@ TEST_F(ABoard, TIE) {
 	board.makeMove(human1,8);
 
 	ASSERT_THAT(board.Winner(), Eq(GameResults::TIE));
+}
+
+TEST_F(ABoard, NO_ONE_IS_WINNING_YET) {
+	human1.setCallSign(PlayerOptions::X);
+	human2.setCallSign(PlayerOptions::O);
+	board.makeMove(human2,0);
+	board.makeMove(human2,1);
+	board.makeMove(human1,2);
+	board.makeMove(human1,3);
+	
+	ASSERT_THAT(board.Winner(), Eq(GameResults::NO_ONE_IS_WINNING_YET));
 
 }
