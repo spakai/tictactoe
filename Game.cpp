@@ -1,9 +1,19 @@
 #include "Game.h"
 
-GenericPlayer & Game::WhoPlaysFirst(GenericPlayer & PlayerOne, GenericPlayer & PlayerTwo) {
+Game::Game() {
+	PlayerOne.setCallSign(PlayerOptions::X);
+	PlayerTwo.setCallSign(PlayerOptions::O);
+	
+}
+
+GenericPlayer & Game::WhoPlaysFirst() {
 	return PlayerOne;
 }
 
-void Game::RunGame() {
-	currentPlayer = WhoPlaysFirst(PlayerOne, PlayerTwo);
+GenericPlayer & Game::getPlayerOne() {
+	return PlayerOne;
+}
+
+GenericPlayer & Game::getPlayerTwo() {
+	return PlayerTwo;
 }

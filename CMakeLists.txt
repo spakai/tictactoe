@@ -14,8 +14,8 @@ set(sources
    Game.cpp)
 
 set(test_sources
-   BoardTest.cpp)
-
+   BoardTest.cpp
+   GameTest.cpp)
 
 add_executable(test ${test_sources} ${sources})
 
