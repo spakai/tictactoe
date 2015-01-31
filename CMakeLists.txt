@@ -10,7 +10,8 @@ set(sources
    main.cpp
    Board.cpp
    GenericPlayer.cpp
-   Human.cpp)
+   Human.cpp
+   Game.cpp)
 
 set(test_sources
    BoardTest.cpp)

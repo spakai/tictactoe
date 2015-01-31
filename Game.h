@@ -1,9 +1,13 @@
+#include "Human.h"
+
+class GenericPlayer;
+
 class Game {
-
 private:
-    void DisplayInstructions() const;
-    void WhoPlaysFirst() const;
-
+	Human PlayerOne;
+	Human PlayerTwo;
+	GenericPlayer & currentPlayer;
 public:
-    void RunGame();
+	GenericPlayer & WhoPlaysFirst(GenericPlayer & PlayerOne, GenericPlayer & PlayerTwo);
+	void RunGame();
 };
