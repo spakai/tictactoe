@@ -3,10 +3,9 @@
 Game::Game() {
 	PlayerOne.setCallSign(PlayerOptions::X);
 	PlayerTwo.setCallSign(PlayerOptions::O);
-	
 }
 
-GenericPlayer & Game::WhoPlaysFirst() {
+GenericPlayer & Game::whoPlaysFirst() {
 	return PlayerOne;
 }
 
@@ -17,3 +16,8 @@ GenericPlayer & Game::getPlayerOne() {
 GenericPlayer & Game::getPlayerTwo() {
 	return PlayerTwo;
 }
+
+GenericPlayer & Game::opponent(GenericPlayer& currentPlayer) {
+	return (currentPlayer == static_cast<GenericPlayer&>(PlayerOne) ? PlayerTwo : PlayerOne); 
+}
+

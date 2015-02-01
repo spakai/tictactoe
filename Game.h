@@ -10,5 +10,6 @@ public:
 	Game();
 	GenericPlayer & getPlayerOne();
 	GenericPlayer & getPlayerTwo();
-	GenericPlayer & WhoPlaysFirst();
+	GenericPlayer & whoPlaysFirst();
+	GenericPlayer & opponent(GenericPlayer & currentPlayer);
 };
