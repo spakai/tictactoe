@@ -1,7 +1,6 @@
 #include "Board.h"
 
 Board::Board() {
-	m_Board.reserve(9);
     m_Board.assign(9,PlayerOptions::EMPTY);
 }
 
