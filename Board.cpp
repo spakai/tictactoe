@@ -8,7 +8,7 @@ std::vector<PlayerOptions>& Board::getBoard() {
     return m_Board;
 }
 
-bool Board::isValidMove(int move) const {
+bool Board::isValidMove(const int move) const {
 
     if(m_Board[move] == PlayerOptions::EMPTY) {
         return true;
@@ -26,7 +26,7 @@ bool Board::makeMove(GenericPlayer & player, int move)  {
 	return false;
 }
 
-GameResults Board::Winner() {
+GameResults Board::Winner() const {
 	// Michael Dawson : Begining C++ Through Game Programming
     const int WINNING_ROWS[8][3] = {{0,1,2},
                                     {3,4,5},

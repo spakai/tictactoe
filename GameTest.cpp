@@ -18,4 +18,3 @@ TEST(AGame, Opponent) {
 	EXPECT_THAT(playerOne.getCallSign(), PlayerOptions::X);
 	ASSERT_THAT(opponent.getCallSign(),PlayerOptions::O);
 } 
-

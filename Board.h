@@ -2,9 +2,8 @@
 
 #include <vector>
 #include <algorithm>
-
-#include "PlayerOptions.h"
 #include "GenericPlayer.h"
+#include "PlayerOptions.h"
 #include "GameResults.h"
 
 class GenericPlayer;
@@ -15,9 +14,9 @@ class Board {
         Board();
         std::vector<PlayerOptions>& getBoard();
 		bool makeMove(GenericPlayer & player, int move);        
-		GameResults Winner(); 
+		GameResults Winner() const; 
     private:
         std::vector<PlayerOptions> m_Board;
-		bool isValidMove(int move) const;
+		bool isValidMove(const int move) const;
 	
 };
