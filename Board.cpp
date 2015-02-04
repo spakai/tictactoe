@@ -17,7 +17,7 @@ bool Board::isValidMove(const int move) const {
     return false;
 }
 
-bool Board::makeMove(GenericPlayer & player, int move)  {
+bool Board::makeMove(const GenericPlayer & player, const int move)  {
 	if(isValidMove(move)) {
 		m_Board[move] = player.getCallSign();
 		return true;

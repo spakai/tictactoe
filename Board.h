@@ -13,7 +13,7 @@ class Board {
     public:
         Board();
         std::vector<PlayerOptions>& getBoard();
-		bool makeMove(GenericPlayer & player, int move);        
+		bool makeMove(const GenericPlayer & player, const int move);        
 		GameResults Winner() const; 
     private:
         std::vector<PlayerOptions> m_Board;
