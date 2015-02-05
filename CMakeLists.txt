@@ -11,11 +11,13 @@ set(sources
    Board.cpp
    GenericPlayer.cpp
    Human.cpp
+   Computer.cpp
    Game.cpp)
 
 set(test_sources
    BoardTest.cpp
-   GameTest.cpp)
+   GameTest.cpp 
+   ComputerTest.cpp)
 
 add_executable(test ${test_sources} ${sources})
 
