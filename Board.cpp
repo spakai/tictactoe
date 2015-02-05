@@ -26,6 +26,11 @@ bool Board::makeMove(const GenericPlayer & player, const int move)  {
 	return false;
 }
 
+void Board::clearMove(const int move) {
+	m_Board[move] = PlayerOptions::EMPTY;
+}      
+	
+
 GameResults Board::Winner() const {
 	// Michael Dawson : Begining C++ Through Game Programming
     const int WINNING_ROWS[8][3] = {{0,1,2},

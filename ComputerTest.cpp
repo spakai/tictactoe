@@ -17,6 +17,6 @@ TEST_F(AI, ComputerMakeMoveToWin) {
 	human.setCallSign(PlayerOptions::X);
 	ai.setCallSign(PlayerOptions::O);
 	board.makeMove(ai,0);
-	board.makeMove(ai,1);
-	ASSERT_THAT(ai.calculateMove(board), Eq(2));
+	board.makeMove(ai,4);
+	ASSERT_THAT(ai.calculateMove(board), Eq(8));
 }
