@@ -13,7 +13,7 @@ class AI: public Test {
 		Computer ai;
 };
 
-TEST_F(AI, ComputerMakeMoveToWin) {
+TEST_F(AI, ComputerMakesMoveToWin) {
 	human.setCallSign(PlayerOptions::X);
 	ai.setCallSign(PlayerOptions::O);
 	board.makeMove(ai,0);
@@ -21,10 +21,18 @@ TEST_F(AI, ComputerMakeMoveToWin) {
 	ASSERT_THAT(ai.calculateMove(board, human), Eq(8));
 }
 
-TEST_F(AI, ComputerMakeMoveToBlockOpponentWin) {
+TEST_F(AI, ComputerMakesMoveToBlockOpponentWin) {
 	human.setCallSign(PlayerOptions::X);
 	ai.setCallSign(PlayerOptions::O);
 	board.makeMove(human,0);
 	board.makeMove(human,4);
 	ASSERT_THAT(ai.calculateMove(board, human), Eq(8));
+}
+
+TEST_F(AI, ComputerMakesAPriorityMove) {
+	human.setCallSign(PlayerOptions::X);
+	ai.setCallSign(PlayerOptions::O);
+	board.makeMove(human,0);
+	board.makeMove(human,5);
+	ASSERT_THAT(ai.calculateMove(board, human), Eq(4));
 }

@@ -21,6 +21,13 @@ int Computer::calculateMove(Board copyOfBoard, GenericPlayer & opponent) {
        }
     }
 
+	std::vector<int> priorityMoves {4,0,2,3,5,6,8,7,1}; 
+	for(auto it = priorityMoves.begin(); it != priorityMoves.end(); ++it) {
+		if(copyOfBoard.makeMove(*this, *it)) {
+			return *it;
+		}
+	}
+
 	return -1;
 
 }
