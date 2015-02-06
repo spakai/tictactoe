@@ -9,7 +9,7 @@ class GenericPlayer {
     protected:
         PlayerOptions callSign;
     public:
-        virtual int calculateMove(Board copyOfBoard)=0;
+        virtual int calculateMove(Board copyOfBoard, GenericPlayer & opponent)=0;
         void setCallSign(PlayerOptions callSign);
         PlayerOptions getCallSign() const;
 		bool operator==(const GenericPlayer& other);

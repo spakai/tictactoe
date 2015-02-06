@@ -5,5 +5,5 @@
 
 class Human : public GenericPlayer {
 	public: 
-		virtual int calculateMove(Board copyOfBoard); 
+		virtual int calculateMove(Board copyOfBoard, GenericPlayer & opponent ); 
 };
