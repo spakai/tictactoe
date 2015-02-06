@@ -21,7 +21,7 @@ TEST_F(AI, ComputerMakeMoveToWin) {
 	ASSERT_THAT(ai.calculateMove(board, human), Eq(8));
 }
 
-TEST_F(AI, ComputerMakeMoveToBlock) {
+TEST_F(AI, ComputerMakeMoveToBlockOpponentWin) {
 	human.setCallSign(PlayerOptions::X);
 	ai.setCallSign(PlayerOptions::O);
 	board.makeMove(human,0);
