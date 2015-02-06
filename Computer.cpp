@@ -4,7 +4,7 @@ int Computer::calculateMove(Board copyOfBoard, GenericPlayer & opponent) {
 
 	for(int move{0}; move < 9 ; move++) {
 		if(copyOfBoard.makeMove(*this, move)) {
-			if(copyOfBoard.Winner() == GameResults::O_WINS) { 
+			if(copyOfBoard.Winner() == (*this).getWinResult()) { 
 				return move;
 			}
 			copyOfBoard.clearMove(move);
@@ -14,7 +14,7 @@ int Computer::calculateMove(Board copyOfBoard, GenericPlayer & opponent) {
 
     for(int move{0}; move < 9 ; move++) {
        if(copyOfBoard.makeMove(opponent, move)) {
-            if(copyOfBoard.Winner() == GameResults::X_WINS) {
+            if(copyOfBoard.Winner() == opponent.getWinResult()) {
                 return move;
             }
             copyOfBoard.clearMove(move);
