@@ -1,11 +1,11 @@
 #include "Game.h"
 
-Game::Game() {
+Game::Game(GenericPlayer & PlayerOne, GenericPlayer & PlayerTwo) : PlayerOne(PlayerOne), PlayerTwo(PlayerTwo)
+{
 	PlayerOne.setCallSign(PlayerOptions::X);
 	PlayerOne.setWinResult(GameResults::X_WINS);
 	PlayerTwo.setCallSign(PlayerOptions::O);
 	PlayerTwo.setWinResult(GameResults::O_WINS);
-	
 }
 
 GenericPlayer & Game::whoPlaysFirst() {

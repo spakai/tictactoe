@@ -1,13 +1,13 @@
-#include "Human.h"
+#include "GenericPlayer.h"
 
 class GenericPlayer;
 
 class Game {
 private:
-	Human PlayerOne;
-	Human PlayerTwo;
+	GenericPlayer & PlayerOne;
+	GenericPlayer & PlayerTwo;
 public:
-	Game();
+	Game(GenericPlayer & PlayerOne, GenericPlayer & PlayerTwo);
 	GenericPlayer & getPlayerOne();
 	GenericPlayer & getPlayerTwo();
 	GenericPlayer & whoPlaysFirst();
