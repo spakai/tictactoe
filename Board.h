@@ -16,6 +16,7 @@ class Board {
 		bool makeMove(const GenericPlayer & player, const int move);      
  		void clearMove(const int move);      
 		GameResults Winner() const; 
+
     private:
         std::vector<PlayerOptions> m_Board;
 		bool isValidMove(const int move) const;

@@ -1,6 +1,7 @@
 #include "gmock/gmock.h"
 #include "Game.h"
 #include "Human.h"
+#include "Computer.h"
 
 using namespace testing;
 using namespace std;
@@ -22,4 +23,11 @@ TEST(AGame, Opponent) {
     GenericPlayer &opponent = game.opponent(playerOne);
     EXPECT_THAT(playerOne.getCallSign(), PlayerOptions::X);
     ASSERT_THAT(opponent.getCallSign(),PlayerOptions::O);
-} 
+}
+
+TEST(AGame, PlayAGame) {
+    Computer PlayerOne;
+    Computer PlayerTwo;
+    Game game(PlayerOne, PlayerTwo);
+    ASSERT_THAT(game.runGame(),GameResults::O_WINS);
+}

@@ -1,4 +1,5 @@
 #include "GenericPlayer.h"
+#include <ostream>
 
 class GenericPlayer;
 
@@ -12,4 +13,5 @@ public:
 	GenericPlayer & getPlayerTwo();
 	GenericPlayer & whoPlaysFirst();
 	GenericPlayer & opponent(GenericPlayer & currentPlayer);
+    GameResults runGame();
 };
