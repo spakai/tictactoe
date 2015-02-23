@@ -22,20 +22,25 @@ GenericPlayer & Game::getPlayerTwo() {
 }
 
 GenericPlayer & Game::opponent(GenericPlayer& currentPlayer) {
-	return (currentPlayer == static_cast<GenericPlayer&>(PlayerOne) ? PlayerTwo : PlayerOne); 
+	return (currentPlayer == dynamic_cast<GenericPlayer&>(PlayerOne) ? PlayerTwo : PlayerOne); 
 }
 
 GameResults Game::runGame() {
     Board board;
-    GenericPlayer & currentPlayer = whoPlaysFirst();
- 
+    int turn=0;
     while(board.Winner() == GameResults::NO_ONE_IS_WINNING_YET) {
-        int move = currentPlayer.calculateMove(board,opponent(currentPlayer));
-        int ret = board.makeMove(currentPlayer, move) ;
-        std::cout << ret  << "," << move << std::endl;
-        currentPlayer = opponent(currentPlayer);
+        if(turn % 2 == 0) {
+            int move = PlayerOne.calculateMove(board,opponent(PlayerOne));
+            int ret = board.makeMove(PlayerOne, move) ;
+        } else {
+            int move = PlayerTwo.calculateMove(board,opponent(PlayerTwo));
+            int ret = board.makeMove(PlayerTwo, move) ;
+        }
+        turn++;
         board.displayBoard();
+ 
     }  
+ 
     return board.Winner();
       
 }

@@ -40,5 +40,5 @@ TEST(AGame, PlayAGame) {
     Computer PlayerOne;
     Computer PlayerTwo;
     Game game(PlayerOne, PlayerTwo);
-    ASSERT_THAT(game.runGame(),GameResults::X_WINS);
+    ASSERT_THAT(game.runGame(),GameResults::TIE);
 }

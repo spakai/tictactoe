@@ -66,7 +66,8 @@ GameResults Board::Winner() const {
 	
 }
 void Board::displayBoard() const {
-    for(auto it = m_Board.begin() ; it != m_Board.end() ; ++it) {
+    int cnt_to_skipline=0;
+    for(auto it = m_Board.begin(); it != m_Board.end() ; ++it) {
         if((*it) == PlayerOptions::X) {
             std::cout << "X ";
         } else if((*it) == PlayerOptions::O) {
@@ -74,5 +75,11 @@ void Board::displayBoard() const {
         } else {
             std::cout << "-  ";
         }
+
+        if(++cnt_to_skipline % 3 == 0) 
+            std::cout << std::endl;
     }
+
+    std::cout << std::endl;
+
 }

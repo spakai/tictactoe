@@ -61,7 +61,6 @@ TEST_F(ABoard, TIE) {
 	board.makeMove(human2,6);
 	board.makeMove(human2,7);
 	board.makeMove(human1,8);
-    board.displayBoard(); 
 	
 	ASSERT_THAT(board.Winner(), Eq(GameResults::TIE));
 }
