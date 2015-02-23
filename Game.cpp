@@ -28,8 +28,14 @@ GenericPlayer & Game::opponent(GenericPlayer& currentPlayer) {
 GameResults Game::runGame() {
     Board board;
     GenericPlayer & currentPlayer = whoPlaysFirst();
-    while(board.Winner() !=GameResults::NO_ONE_IS_WINNING_YET) {
-        board.makeMove(currentPlayer, currentPlayer.calculateMove(board,opponent(currentPlayer)));
+ 
+    while(board.Winner() == GameResults::NO_ONE_IS_WINNING_YET) {
+        int move = currentPlayer.calculateMove(board,opponent(currentPlayer));
+        int ret = board.makeMove(currentPlayer, move) ;
+        std::cout << ret  << "," << move << std::endl;
         currentPlayer = opponent(currentPlayer);
-    }        
+        board.displayBoard();
+    }  
+    return board.Winner();
+      
 }

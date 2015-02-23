@@ -65,3 +65,14 @@ GameResults Board::Winner() const {
 
 	
 }
+void Board::displayBoard() const {
+    for(auto it = m_Board.begin() ; it != m_Board.end() ; ++it) {
+        if((*it) == PlayerOptions::X) {
+            std::cout << "X ";
+        } else if((*it) == PlayerOptions::O) {
+            std::cout << "O ";
+        } else {
+            std::cout << "-  ";
+        }
+    }
+}

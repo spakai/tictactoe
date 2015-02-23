@@ -1,5 +1,6 @@
 #include "GenericPlayer.h"
-#include <ostream>
+
+#include <functional>
 
 class GenericPlayer;
 
